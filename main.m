@@ -129,6 +129,7 @@ magnet_lock = item("600lbs Electric Magnetic Electromagnetic Lock",28.5,"https:/
 camera = item("Amcrest Prohd 1080P 4CH Video Home Security Camera System",219.99,"https://www.amazon.com/gp/product/B00YZF7PEU/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1");
 hdmi_cable = item("4K HDMI Cable 25ft-HDMI 2.0",28.99,"https://www.amazon.com/25ft-HDMI-Supports-Ethernet-Return-CL3-Installation/dp/B01HFSAFP4/ref=sr_1_1_sspa?crid=QR2FO83JJPCF&keywords=hdmi+cable&qid=1557152775&refinements=p_n_feature_keywords_four_browse-bin%3A7800973011&rnid=7623517011&s=aht&sprefix=hdmi+ca%2Caps%2C235&sr=1-1-spons&psc=1");
 silver_paint = item("8 oz. Metallic Sterling Silver Paint",9.98,"https://www.homedepot.com/p/Americana-Decor-8-oz-Metallic-Sterling-Silver-Paint-ADMTL07-98/300903278?storeSelection=4416,4407,4417,4409,8566");
+poster = item("56 x 34.6 in Poster", 100.00, "https://posterprintshop.com/pricing/");
 
 switch_2p = item("Nilight Heavy Duty Rocker Toggle Switch",9.36,"https://www.amazon.com/Nilight-Rocker-Toggle-Switch-Waterproof/dp/B078KBC5VH/ref=sr_1_3?crid=2XQREJRP3FCWG&keywords=toggle+switch&qid=1557153529&s=industrial&sprefix=toggle+sw%2Cindustrial%2C181&sr=1-3");
 siwtch_3p = item("Nilight 50098R 6Pin Heavy Duty Rocker Toggle",10.8,"https://www.amazon.com/Nilight-Rocker-Toggle-Switch-Waterproof/dp/B0002ZPBRA/ref=sr_1_3?crid=2XQREJRP3FCWG&keywords=toggle%2Bswitch&qid=1557153529&s=industrial&sprefix=toggle%2Bsw%2Cindustrial%2C181&sr=1-3&th=1");
@@ -359,7 +360,7 @@ building = task("Building/Instilation",{project,0});
         infinity_mirrors_step_indicator = task("Step Indicator",{infinity_mirrors_grate,1},2);
         infinity_mirrors.add_subtask([infinity_mirrors_frame,infinity_mirrors_electrical,infinity_paint,infinity_mirrors_grate,infinity_mirrors_step_indicator]);
     starchart = task("Start Chart Poster",{building,0});
-        starchart.materials = [thin_plexi]; %add poster
+        starchart.materials = [thin_plexi, poster];
     window = task("Window",{building,0});
         window_frame = task("Frame",{desk,1},4);
             window_frame.materials = [two_by_four,tv_55,tv_mount];
