@@ -93,7 +93,6 @@ fan = item("Holmes HBF2001DP-BM 20-Inch Box Fan,Black",19.99,"https://www.amazon
 white_paint_marker = item("SHARPIE MED WHT OB PAINT MARKER",6.20,"https://www.amazon.com/Sanford-35558-Sharpie-Oil-Based-1-Count/dp/B001PLKRZQ/ref=pd_sbs_79_1/134-9040081-1883040?_encoding=UTF8&pd_rd_i=B001PLKRZQ&pd_rd_r=5bbd9aeb-6ba1-11e9-b421-cdcde3290510&pd_rd_w=CWmUu&pd_rd_wg=rQdH8&pf_rd_p=588939de-d3f8-42f1-a3d8-d556eae5797d&pf_rd_r=04AAT0BJ949ZARE1M8K5&psc=1&refRID=04AAT0BJ949ZARE1M8K5");
 strobe = item("Hideaway Strobe Lights White High Power 24W 8 Chipsets Surface Mount",42.99,"https://www.amazon.com/Hideaway-Chipsets-Surface-Waterproof-Emergency/dp/B078WMKQV3/ref=sr_1_14?keywords=strobe+lights+white&qid=1556667847&s=gateway&sr=8-14");
 power_switch_tail = item("PowerSwitch Tail II",26.99,"http://www.powerswitchtail.com/");
-extension_cord = item("100 ft. 16/3 Indoor/Outdoor Extension Cord, Orange",17.97,"https://www.homedepot.com/p/HDX-100-ft-16-3-Indoor-Outdoor-Extension-Cord-Orange-HD-277-525/100650619");
 L_brace = item("3 in. Black Corner Brace (4-Pack)",4.18,"https://www.homedepot.com/p/Everbilt-3-in-Black-Corner-Brace-4-Pack-13741/300985591");
 giant_outlet = item("VLUXPARTS 7-Way Trailer Plug Socket Extension Cable ",19.99,"https://www.amazon.com/dp/B07JWF845G/ref=sspa_dk_detail_0?psc=1");
 giant_plug = item("Conntek Heavy-Duty 7-Way Plug to ROJ (25 foot)",42.42,"https://www.amazon.com/Conntek-10110-072-Inline-Trailer-6-Feet/dp/B002QOTJ3W/ref=sr_1_37?keywords=giant%2Bplug&qid=1556812483&s=gateway&sr=8-37&th=1");
@@ -136,6 +135,9 @@ switch_with_light = item("Safety Cover Toggle Switch with Red Indicator Light",1
 button = item("Momentary Push Button Switch",9.96,"https://www.amazon.com/Momentary-URTONE-Stainless-Suitable-Mounting/dp/B077PHGXZR/ref=sr_1_21?keywords=robust+button&qid=1557153394&s=industrial&sr=1-21");
 dial = item("2pcs Rotary Taper Potentiometer",11.88,"https://www.amazon.com/RV24YN20S-Potentiometer-Inverter-regulation-control/dp/B0795Q97C1/ref=sr_1_21?crid=13S9OL6R22L7A&keywords=rotary%2Bpotentiometer&qid=1557154036&s=industrial&sprefix=rotary%2Bpo%2Cindustrial%2C178&sr=1-21&th=1");
 joy = item("Arduino Joystick",9.99,"https://www.amazon.com/SunFounder-Joystick-Module-Arduino-Raspberry/dp/B013G8KSB8/ref=sr_1_5?crid=1BIXK4MG6NG5Z&keywords=arduino+joystick&qid=1557348159&s=gateway&sprefix=arduino+joys%2Caps%2C255&sr=8-5");
+rasberry_pie = item("Raspberry Pi 7 in Touch Screen Display",69.99,"https://www.amazon.com/Raspberry-Pi-7-Touchscreen-Display/dp/B0153R2A9I/ref=sr_1_8?keywords=rasberry+pie&qid=1557354833&s=gateway&sr=8-8");
+
+extension_cord = item("25 ft. 16/3 Light-Duty Indoor/Outdoor Extension Cord",9.97,"https://www.homedepot.com/p/HDX-25-ft-16-3-Light-Duty-Indoor-Outdoor-Extension-Cord-HD-277-509/202523959");
 
 label_maker = item("Laser Engraver Printer",99.97,"https://www.amazon.com/Engraver-Meterk-Household-Engraving-Bluetooth4-0/dp/B07HP4LMN2/ref=sr_1_10?keywords=engraving&qid=1557346653&s=gateway&sr=8-10");
 
@@ -150,8 +152,17 @@ aux_plug = item("Headphone Audio Jack, Pack of 10",8.99,"https://www.amazon.com/
 laser = item("50 mw Green Dot Laser 2 Pack",21.79,"https://www.amazon.com/lights88-Green-Laser-Modules-Diodes/dp/B01MRSUG6C/ref=pd_cp_328_1?pd_rd_w=gv6Ym&pf_rd_p=ef4dc990-a9ca-4945-ae0b-f8d549198ed6&pf_rd_r=JZH9025J6SD6EAWFH0CD&pd_rd_r=936042fd-71b1-11e9-a9da-2171f603c15c&pd_rd_wg=nX1fk&pd_rd_i=B01MRSUG6C&psc=1&refRID=JZH9025J6SD6EAWFH0CD");
 two_by_eight = item("2 in. x 8 in. x 16 ft. #2 Ground Contact Hem Fir Pressure-Treated Lumber",21.7,"https://www.homedepot.com/p/Construction-Select-2-in-x-8-in-x-16-ft-2-Ground-Contact-Hem-Fir-Pressure-Treated-Lumber-549000102081600/206931774");
 keypad = item("4 x 4 Matrix Array 16",8.99,"https://www.amazon.com/Matrix-Membrane-Switch-Keyboard-Arduino/dp/B015M1CEIC/ref=sr_1_1_sspa?keywords=arduino+keypad&qid=1557337389&s=electronics&sr=1-1-spons&psc=1&smid=A13Q34JY4ZWN5V");
+LCD = item("SunFounder 2004 20x4 LCD Module",20.99,"https://www.amazon.com/SunFounder-Serial-Module-Arduino-Mega2560/dp/B07MTFDHXZ/ref=sr_1_3?crid=1L9TC1LOPO2OC&keywords=arduino%2Bdisplay&qid=1557354705&s=gateway&sprefix=arduino%2Bdisplay%2Caps%2C298&sr=8-3&th=1");
 metal_box = item("Metallic AC Disconnect",8.98,"https://www.homedepot.com/p/Halex-60-AMP-120-240-Volt-Non-Fuse-Metallic-AC-Disconnect-HNF60R/205785642");
 
+black_paint = item("1 gal. #ECC-10-2 Jet Black Flat Low Odor Interior Paint and Primer in One",27.98,"https://www.homedepot.com/p/BEHR-Premium-Plus-1-gal-ECC-10-2-Jet-Black-Flat-Low-Odor-Interior-Paint-and-Primer-in-One-130001/204869113");
+heavy_hinge = item("4 in. Heavy T-Hinge",12.17,"https://www.homedepot.com/p/The-Hillman-Group-4-in-Heavy-T-Hinge-in-Zinc-Plated-5-Pack-851673-0/203810062");
+metal_rod = item("1/2 in. x 36 in. Plain Steel Round Rod",5.77,"https://www.homedepot.com/p/Everbilt-1-2-in-x-36-in-Plain-Steel-Round-Rod-802457/204273960");
+round_handle = item("2 Spoked Black Powder Coated Aluminum Dished Hand Wheel",41.23,"https://www.amazon.com/Spoked-Powder-Coated-Aluminum-Diameter/dp/B006M6Z5N8/ref=sr_1_2?keywords=5+spoke+handle&qid=1557772931&refinements=p_85%3A2470955011&rnid=2470954011&rps=1&s=industrial&sr=1-2");
+hinge_pin = item("Spring Loaded Latch Pin",13.99,"https://www.amazon.com/Spring-Loaded-Carriage-Stainless-Thickened/dp/B07NQ88P5D/ref=sr_1_11?keywords=pin+and+spring+assembly&qid=1557778941&s=gateway&sr=8-11");
+wire_rope = item("1/16 in. x 1 ft. Galvanized Steel Uncoated Wire Rope",0.23,"https://www.homedepot.com/p/Crown-Bolt-1-16-in-x-1-ft-Galvanized-Steel-Uncoated-Wire-Rope-11906/100338232");
+wire_pin = item("1/16 in. Zinc-Plated Clamp Set",1.52,"https://www.homedepot.com/p/Everbilt-1-16-in-Zinc-Plated-Clamp-Set-4-Pack-44434/206961161");
+JB_weld = item("Two 1 oz. Twin Tube Kwikweld",5.27,"https://www.homedepot.com/p/J-B-Weld-Two-1-oz-Twin-Tube-Kwikweld-8276/100139717");
 
 
 infinity_mirror = item("GODMORGON Mirror", 49.99, "https://www.ikea.com/us/en/catalog/products/10182165/?gclid=Cj0KCQjwtr_mBRDeARIsALfBZA6zTZYwnGwpY1CyI6FsbQ3nlHzi867zbg47LhTFUbrHKlo-30sIsM0aAqE9EALw_wcB#/50149131");
@@ -165,8 +176,6 @@ grate = item("24 in. x 3/4 in. x 24 in. Plain Expanded Metal Sheet", 19.97, "htt
 print = item("Print per page",0.15,"https://lib.byu.edu/faq/244761/");
 bind = item("Spiral Binding",20.19,"https://www.officedepot.com/catalog/search.do?Ntt=spiral+binding&searchSuggestion=true");
 blue_paint = item("Blue Paint",34.98,"https://www.homedepot.com/p/BEHR-1-gal-S-H-580-Navy-Blue-Satin-Enamel-Alkyd-Interior-Exterior-Paint-793001/302141254");
-black_paint = item("Black Paint",34.98,"https://www.homedepot.com/p/BEHR-1-gal-S-H-580-Navy-Blue-Satin-Enamel-Alkyd-Interior-Exterior-Paint-793001/302141254");
-
 %% Tasks
 
 project.materials = [wood_screws*2,joint_compound,joint_tape*2,developers_fee,solder];
@@ -186,15 +195,15 @@ construction = task("Contractor Construction",{project,0});
         ceiling_tiles = task("Remove Ceiling Tiles",{demolition,0},1);
         demolition.add_subtask([bathroom,platform,ceiling_tiles]);
     teleport = task("Teleport Door",{demolition,1});
-        teleport_hole = task("Cut Hole",{teleport,0},1);
-        secure = task("Secure Door",{teleport_hole,1},1);
-        frame = task("Frame in Door",{secure,1},3);
-        teleport.materials = darkroom_door;
-        teleport.add_subtask([teleport_hole,secure,frame])
+        teleport_frame = task("Frame in Door",{teleport,0},10);
+            frame.materials = [14*two_by_four,drywall*4,black_paint*ceil((10*(10+10+4+4))/200),heavy_hinge*4,plywood*2,metal_rod,round_handle*2,hinge_pin,wire_rope*10,wire_pin,JB_weld];
+        teleport_electrical = task("Electrical",{teleport_frame,0.2},4);
+            teleport_electrical.materials = [arduino,usb_b,usb_adaptor,wire,keypad,LCD,switch_2p];
+        teleport.add_subtask([teleport_frame,teleport_electrical])
+    cover_brick_and_pole = task("Drywall Over Brick and Pole",{demolition,1},10);
+        cover_brick_and_pole.materials = [drywall*9,two_by_four*5];
     paint = task("Paint Walls",{teleport,1},8);
         paint.materials = [ceil((10*(10+31+15+19+6+13))/200)*wall_paint,2*paint_tray,paint_rollers,paint_brush];
-    circuit_breakers = task("Circit Breakers",{project,0},40);
-        circuit_breakers.materials = circuit_breaker;
     electrical = task("Wire Outlets",{demolition,1},20);
         electrical.materials = [3*wires_120,4*outlet,wire_ties,4*electrical_box];
         electrical.starts_when(circuit_breakers,1);
