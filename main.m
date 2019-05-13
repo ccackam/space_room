@@ -2,10 +2,8 @@ clear all
 close all
 clc
 
-% Add wire sniping
-% Add lasers
+
 % Add tool box
-% Voice changer
 % Paint Ships name under power supply 
 % Lights under powersupply
 % Does magnent fit?
