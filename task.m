@@ -230,8 +230,8 @@ classdef task < handle
                 itemize = true;
             end
             
-            indent(1:level*4) = ' ';
-            fprintf('%-s\n',self.name)
+            indent(1,1:level) = ',';
+            fprintf('%-s\n',indent(1:end-1) + self.name)
             
             total_cost = 0;
             for i = 1:length([self.subtasks])
@@ -251,20 +251,20 @@ classdef task < handle
                 count = count(ia);
                 for i =1:length(material)
                     if count(i) > 1
-                        fprintf(',%-s, $ %.2f\n',string(count(i))+' x '+material(i).name,material(i).cost*count(i))
+                        fprintf('%-s, $ %.2f\n',indent + string(count(i))+' x '+material(i).name,material(i).cost*count(i))
                     else
-                        fprintf(',%-s, $ %.2f\n',material(i).name,material(i).cost)
+                        fprintf('%-s, $ %.2f\n',indent + material(i).name,material(i).cost)
                     end
                 end
             end
             if isempty(self.subtasks)
                 hours_cost = self.pay_rate*self.dur;
                 total_cost = total_cost + hours_cost;
-                fprintf(',%-s, $ %.2f\n',string(self.dur)+' x Man Hours',hours_cost)
+                fprintf('%-s, $ %.2f\n',indent + string(self.dur)+' x Man Hours',hours_cost)
             end
             
             total_cost = total_cost + sum([self.materials.cost]);
-            fprintf(',%-s, $ %.2f\n','TOTAL',total_cost)
+            fprintf('%-s, $ %.2f\n',indent + "TOTAL",total_cost)
             if first
                 fprintf(bar);
             end
