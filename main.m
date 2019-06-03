@@ -10,7 +10,7 @@ clc
 % Add Voice Changer
 
 %% Constants
-project_start = datetime(2019,4,29,8,0,0);
+project_start = datetime(2019,6,3,8,0,0);
 project_end = datetime(2019,8,1,5,0,0);
 
 project = task("Space Room");
@@ -20,11 +20,12 @@ day = task.hours_in_day;
 week = task.hours_in_day*5;
 
 %% Days Gone
-Kameron = datetime(2019,4,30);
-Josh = datetime(2019,4,30);
-McKay = datetime(2019,4,30);
+Kameron = [datetime(2019,6,11:16),datetime(2019,7,9),datetime(2019,7,13:20)];
+Josh = datetime.empty();
+McKay = datetime(2019,6,5:13);
+Jerimiah = datetime.empty();
 
-avaliablity = {Kameron,Josh,McKay};
+avaliablity = {Kameron,Josh,McKay,Jerimiah};
 
 %% Materials
 mask = item("N95 Respirator Mask",5.87,"Home Depot");
@@ -73,7 +74,7 @@ station_seats = item("Wise 8WD015-3-710 Standard Pilot Chair with Cushions and M
 station_stand = item("attwood Corporation Economy Pedestal Adj 11.5-17.5",27,"https://www.amazon.com/Attwood-Corporation-Economy-Pedestal-17-5/dp/B001O0DESK/ref=pd_bxgy_200_img_3/134-3882929-6430841?_encoding=UTF8&pd_rd_i=B001O0DESK&pd_rd_r=99e8577c-66e7-11e9-b421-cdcde3290510&pd_rd_w=7aWdt&pd_rd_wg=hxNYo&pf_rd_p=a2006322-0bc0-4db9-a08e-d168c18ce6f0&pf_rd_r=E51JF93QY1R732PS9C71&psc=1&refRID=E51JF93QY1R732PS9C71--");
 station_swivel = item("attwood 17720 Boat Seat Swivel",7.96,"https://www.amazon.com/attwood-17720-Boat-Seat-Swivel/dp/B001O0D6SI/ref=pd_bxgy_200_img_2/134-3882929-6430841?_encoding=UTF8&pd_rd_i=B001O0D6SI&pd_rd_r=99e8577c-66e7-11e9-b421-cdcde3290510&pd_rd_w=7aWdt&pd_rd_wg=hxNYo&pf_rd_p=a2006322-0bc0-4db9-a08e-d168c18ce6f0&pf_rd_r=E51JF93QY1R732PS9C71&psc=1&refRID=E51JF93QY1R732PS9C71--");
 captian_seat = item("Magshion Black PU Racing Recliner Chair Set 360 Degree Swivel",169.99,"https://www.amazon.com/Magshion-Racing-Recliner-Ottoman-Theater/dp/B079YZ595K/ref=sr_1_6?keywords=white+futuristic+chair&qid=1556656167&s=gateway&sr=8-6");
-LED_strip = item("TBI Pro 32.8ft 300LEDs SMD 5050 RGB",34.64,"https://www.amazon.com/Upgraded-Strip-Lights-32-8ft-Adhesive/dp/B07J9HTB78/ref=sr_1_1_sspa?keywords=rgb+led+strip&qid=1556658561&s=gateway&sr=8-1-spons&psc=1");
+LED_strip = item("ALITOVE 16.4ft WS2812B Individually Addressable LED Strip Light 5050 RGB",22.88,"https://www.amazon.com/ALITOVE-WS2812B-Individually-Addressable-Waterproof/dp/B00ZHB9M6A/ref=sr_1_3?crid=3HY7XC3AT1P9A&keywords=led%2Bstrips%2Bindividually%2Baddressable&qid=1558981255&s=gateway&sprefix=led%2Bstrips%2Bindiv%2Caps%2C258&sr=8-3&th=1");
 arduino_uno = item("ARDUINO UNO R3",20.45,"https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6?ref_=bl_dp_s_web_2582406011");
 arduino_mega = item("ARDUINO MEGA 2560 REV3",31.81,"https://www.amazon.com/ARDUINO-MEGA-2560-REV3-A000067/dp/B0046AMGW0?ref_=bl_dp_s_web_2582406011");
 solder = item("MAIYUM 63-37 Tin Lead Rosin core solder wire for electrical soldering (0.8mm 50g)",6.88,"https://www.amazon.com/MAIYUM-63-37-solder-electrical-soldering/dp/B075WB98FJ/ref=sxin_2_ac_d_pm?keywords=solder&pd_rd_i=B075WB98FJ&pd_rd_r=95f8d010-5528-4e95-9ba3-8bcd7a53b373&pd_rd_w=ZrijN&pd_rd_wg=8pYFT&pf_rd_p=6034bbf7-e1cb-46a0-92a7-12ce26e57be9&pf_rd_r=3331HNJP7K6M89GM6J03&qid=1556659054&s=electronics");
@@ -100,7 +101,7 @@ thin_plywood = item("5.2mm - Sande Plywood",22.92,"https://www.homedepot.com/p/S
 decorative_steel = item("36 in. x 36 in. Plain Aluminum Sheet in Silver",21.98,"https://www.homedepot.com/p/M-D-Building-Products-36-in-x-36-in-Plain-Aluminum-Sheet-in-Silver-57000/100351161");
 light_tubes = item("lychee EL Wire Neon Glowing Strobing Electroluminescent Light",7.95,"https://www.amazon.com/gp/product/B013FZHD06/ref=ppx_od_dt_b_asin_title_s00?ie=UTF8&psc=1");
 mosfet = item("WeiMeet RFP30N06LE 30A 60V N-Channel Power Mosfet TO-220 ESD Rated for Arduino(10 Pieces)",9.99,"https://www.amazon.com/WeiMeet-RFP30N06LE-N-Channel-Mosfet-Arduino/dp/B07CTF1JVD/ref=sr_1_1_sspa?keywords=mosfet&qid=1556910186&s=gateway&sr=8-1-spons&psc=1");
-crackel_tube = item("Crackle Tube",3420,"https://strattman.com/crackle-tubes/");
+crackel_tube = item("3 in. Crackle Tube",1620,"https://strattman.com/crackle-tubes/");
 plasma_tube = item("Plasma Tube 6x48",2315,"https://strattman.com/plasma-tubes/");
 lightning_tube = item("Lightning Tube 6x48",2200,"https://strattman.com/lightning_tubes/");
 power_supply = item("Power Supply",475,"https://strattman.com/plasma-tubes/");
@@ -180,7 +181,7 @@ bind = item("Spiral Binding",20.19,"https://www.officedepot.com/catalog/search.d
 blue_paint = item("Blue Paint",34.98,"https://www.homedepot.com/p/BEHR-1-gal-S-H-580-Navy-Blue-Satin-Enamel-Alkyd-Interior-Exterior-Paint-793001/302141254");
 %% Tasks
 
-project.materials = [wood_screws*2,joint_compound,joint_tape*2,developers_fee,solder];
+project.materials = [wood_screws*2,joint_compound,joint_tape*2,solder];
 
 construction = task("Contractor Construction",{project,0});
     demolition = task("Demolition",{construction,0});
@@ -197,17 +198,21 @@ construction = task("Contractor Construction",{project,0});
         platform = task("Platform",{demolition,0},2);
         ceiling_tiles = task("Remove Ceiling Tiles",{demolition,0},1);
         demolition.add_subtask([bathroom,platform,ceiling_tiles]);
-    teleport = task("Teleport Door",{demolition,1});
+    teleport = task("Teleport Wall/Door",{demolition,1});
+        teleport.assigned_to = 'Jerimiah';
         teleport_frame = task("Frame in Door",{teleport,0},10);
             frame.materials = [12*two_by_four,drywall*4,black_paint*ceil((10*(10+10+4+4))/200),heavy_hinge*4,plywood*4,metal_rod,round_handle*2,hinge_pin,wire_rope*10,wire_pin,JB_weld,decorative_steel];
         teleport_electrical = task("Electrical",{teleport_frame,0.2},4);
             teleport_electrical.materials = [arduino_uno,usb_b,usb_adaptor,wires,keypad,LCD,switch_2p];
         teleport.add_subtask([teleport_frame,teleport_electrical])
     cover_brick = task("Drywall Over Brick and Pole",{demolition,1},10);
+        cover_brick.assigned_to = 'Jerimiah';
         cover_brick_and_pole.materials = [drywall*4,liquid_nails*3];
     paint = task("Paint Walls",{teleport,1},8);
+        paint.assigned_to = 'Jerimiah';
         paint.materials = [ceil((10*(10+31+15+19+6+13))/200)*wall_paint,2*paint_tray,paint_rollers,paint_brush];
     desk = task("Desk",{construction,0});
+        desk.assigned_to = 'Jerimiah';
         desk.starts_when(paint,1);
         base = task("Base",{desk,0},8);
             base.materials = 25*two_by_four;
@@ -219,17 +224,21 @@ construction = task("Contractor Construction",{project,0});
             paint_desk.materials = ceil((5*5*4*3 + 10*(4+2+2))/200)*white_paint;
         desk.add_subtask([base,desk_electrical,top,paint_desk])
     powersupply = task("Power Supply",{paint,1},5);
+        powersupply.assigned_to = 'Jerimiah';
         powersupply.materials = [6*plywood,20*two_by_four,thin_plexi,8*two_by_two,black_paint];
     patch_holes = task("Patch Holes",{demolition,1},4);
+        patch_holes.assigned_to = 'Jerimiah';
         desk.starts_when(patch_holes,1);
         patch_holes.materials = drywall;
     construction.add_subtask([demolition,teleport,cover_brick,paint,desk,powersupply,patch_holes])
     
 building = task("Building/Instilation",{project,0});
     floor = task("Floor",{construction,1},6);
+        floor.assigned_to = 'McKay';
         floor.starts_when(patch_holes,1);
         floor.materials = flooring*ceil((31*10+15*5)*1.2);
     circuit_scramble = task("Circuit Scramble",{building,0},1);
+        circuit_scramble.assigned_to = 'Kameron';
         circuit_scramble_prototype = task("Prototype",{circuit_scramble,0},8);
             circuit_scramble_prototype.materials = light_wire;
         circuit_scramble_frame = task("Frame",{circuit_scramble_prototype,3},4);
@@ -242,6 +251,7 @@ building = task("Building/Instilation",{project,0});
             circuit_scramble_install.starts_when(powersupply,1)
         circuit_scramble.add_subtask([circuit_scramble_prototype,circuit_scramble_frame,circuit_scramble_electrical,circuit_scramble_code,circuit_scramble_install])
     switch_board = task("Switch Board",{building,0});
+        switch_board.assigned_to = 'Josh';
         switch_board_prototype = task("Prototype",{switch_board,0},8);
         switch_board_frame = task("Frame",{switch_board_prototype,1},4);
             switch_board_frame.materials = [two_by_two,pretty_plywood,decorative_steel];
@@ -253,6 +263,7 @@ building = task("Building/Instilation",{project,0});
             switch_board_install.starts_when(powersupply,1);
         switch_board.add_subtask([switch_board_prototype,switch_board_frame,switch_board_electrical,switch_board_code,switch_board_install])
     lasers = task("Lasers",{floor,1});
+        lasers.assigned_to = 'Kameron';
         lasers_prototype = task("Prototype",{lasers,0},6);
         lasers_frame = task("Frame",{lasers_prototype,1},3);
             lasers_frame.materials = two_by_eight;
@@ -260,13 +271,17 @@ building = task("Building/Instilation",{project,0});
             lasers_electrical.materials = [laser*6,variable_voltage_adaptor];
         lasers_install = task("Install",{lasers_electrical,1},1);
     pole_cover = task("Pole Cover", {building,0}, 1);
+        pole_cover.assigned_to = 'Jerimiah';
         pole_cover.materials = [two_by_four*5, drywall];
     escape_pod = task("Teleport Door",{teleport,1},5);
+        escape_pod.assigned_to = 'Jerimiah';
         escape_pod.materials = decorative_steel*4;
     constilation = task("Constilation Viewer",{paint,1});
+        constilation.assigned_to = 'Jerimiah';
         constilation_ladder = task("Ladder",{constilation,0},1);
             constilation_ladder.materials = [ladder,ladder_screws*4,two_by_four];
         constilation_lights = task("Lights",{constilation,0},5);
+            constilation_lights.assigned_to = 'Josh';
             constilation_lights.materials = [cardboard_box,pixilights,point_LED,resistors,wires,variable_voltage_adaptor];
         constilation_bubble = task("Bubble",{constilation_lights,1},1);
             constilation_bubble.materials = bubble;
@@ -274,8 +289,10 @@ building = task("Building/Instilation",{project,0});
             constillation_frame.materials = [two_by_four*2, pretty_plywood];
         constilation.add_subtask([constilation_ladder,constilation_lights,constilation_bubble,constillation_frame]);
     blackboard = task("Whiteboard",{paint,1},1);
+        blackboard.assigned_to = 'McKay';
         blackboard.materials = [whiteboard*2,dry_erase_marker];
     captian_chair = task("Captian's Chair",{building,0},1);
+        captian_chair.assigned_to = 'McKay';
         captian_chair_secure = task("Secure",{captian_chair,0},5);
             captian_chair_secure.materials = captian_seat;
         captian_chair_augment = task("Augment",{captian_chair_secure,1},5);
@@ -283,6 +300,7 @@ building = task("Building/Instilation",{project,0});
         captian_chair_paint = task("Paint",{captian_chair_augment,1},3);
         captian_chair.add_subtask([captian_chair_secure,captian_chair_augment,captian_chair_paint]);
     computer = task("Captian's Computer",{building,0});
+        computer.assigned_to = 'Kameron';
         computer_code = task("Code Computer",{computer,0},20);
             computer_code.note = "Ensure user's can't fiddle with other components";
         computer_stand = task("Stand",{computer,0},2);
@@ -294,8 +312,11 @@ building = task("Building/Instilation",{project,0});
             computer_install.materials = [rasberry_pie,hdmi_cable];
         computer.add_subtask([computer_code,computer_stand,computer_keyboard,computer_install]);
     hologram = task("Hologram",{building,0});
+        hologram.assigned_to = 'Josh';
         timer = task("Timer",{hologram,0},10);
+        timer.assigned_to = 'Kameron';
         videos = task("Videos",{hologram,0},20);
+            videos.assigned_to = 'McKay';
         hologram_frame = task("Frame",{desk,1},6);
             hologram_frame.materials = [2*two_by_two,two_by_four*2,thick_plexi,tv_55,tv_mount];
         hologram_paint = task("Paint",{hologram_frame,1},2);
@@ -305,8 +326,10 @@ building = task("Building/Instilation",{project,0});
             hologram_controller.note = "Game Master's Computer?";
         hologram.add_subtask([timer,videos,hologram_frame,hologram_paint,hologram_controller]);
     fans = task("Fans",{floor,1});
+        Fans.assigned_to = 'Kameron';
         fans.materials = fan*2;
         fans_paint = task("Paint Code",{fans,0},1);
+            fans_paint.assigned_to = 'McKay';
             fans_paint.materials = white_paint_marker;
         fans_strobe = task("Paint Install Strobe",{building,0},2);
             fans_strobe.materials = strobe;
@@ -323,9 +346,12 @@ building = task("Building/Instilation",{project,0});
             fans_outlet_lock.starts_when(fans_outlet_connection,1);
         fans.add_subtask([fans_paint,fans_strobe,fans_strobe_controller,fans_install,fans_outlet_electrical,fans_outlet_connection,fans_outlet_lock]);
     crackel = task("Crackle Tube",{building,0});
+        crackel.assigned_to = 'Jerimiah';
         crackel_powersupply = task("Power Suply",{crackel,0},1);
+            crackel_powersupply.assigned_to = 'Kameron';
             crackel_powersupply.materials = power_supply;
         crackel_electrical = task("Electrical",{crackel_powersupply,1},3);
+            crackel_electrical.assigned_to = 'Kameron';
             crackel_electrical.materials = [wires,arduino_uno,usb_b,usb_adaptor,power_switch_tail];
             powersupply.starts_when(crackel_electrical,1);
         crackel_frame = task("Frame",{powersupply,1},4);
@@ -334,6 +360,7 @@ building = task("Building/Instilation",{project,0});
         crackel_paint = task("Paint",{crackel_frame,1},1);
         crackel.add_subtask([crackel_powersupply,crackel_electrical,crackel_frame,crackel_paint]);
     infinity_mirrors = task("Infinity Mirrors",{building,0});
+        infinity_mirrors.assigned_to = 'Josh';
         infinity_mirrors_frame = task("Frame",{infinity_mirrors,0},4);
             floor.starts_when(infinity_mirrors_frame,1)
             infinity_mirrors_frame.materials = [two_by_four,infinity_mirror,infinity_glass_film,thick_plexi,grate];
@@ -344,46 +371,58 @@ building = task("Building/Instilation",{project,0});
         infinity_mirrors_step_indicator = task("Step Indicator",{infinity_mirrors_grate,1},2);
         infinity_mirrors.add_subtask([infinity_mirrors_frame,infinity_mirrors_electrical,infinity_paint,infinity_mirrors_grate,infinity_mirrors_step_indicator]);
     starchart = task("Start Chart Poster",{building,0});
+        starchart.assigned_to = 'McKay';
         starchart.materials = [thin_plexi, poster, two_by_two]; % Change to two_by_one
     window = task("Window",{building,0});
+        window.assigned_to = 'Jerimiah';
         window_frame = task("Frame",{desk,1},4);
             window_frame.materials = [two_by_four,tv_55,tv_mount];
         window_animation = task("Animation",{window,0},10);
+            window_animation.assigned_to = 'Kameron';
         window_electrical = task("Electrical",{window_frame,1},3);
             window_electrical.materials = hdmi_cable;
         window_paint = task("Paint",{window_electrical,1},3);
         window.add_subtask([window_frame,window_animation,window_electrical,window_paint]);
     ceiling = task("Ceiling",{fans_strobe,1},6);
+        ceiling.assigned_to = 'McKay';
         ceiling.starts_when(constilation,1)
     	ceiling.materials = [((31*10+15*5)*1)*ceiling_style1,ceil((31*10+15*5)*0.3)*ceiling_style2];
         ceiling.starts_when(paint,1);
     lighting = task("Lighting",{ceiling,1});
+        lighting.assigned_to = 'Kameron';
         lighting.note = "https://www.google.com/search?q=controlling+led+strip+with+arduino&oq=controlling+a+led+strip+w&aqs=chrome.1.69i57j0l5.5392j0j1&sourceid=chrome&ie=UTF-8#kpvalbx=1";
         lighting.starts_when(paint,1);
         lighting_frame = task("Frame",{lighting,0},15);
+            lighting_frame.assigned_to = 'Jerimiah';
             lighting_frame.materials = ceil(2*(10+31+15+19+6+13)/(8*8)*1.2)*pretty_plywood;
         lighting_electrical = task("Electrical",{lighting_frame,1},3);
-            lighting_electrical.materials = [wires,solder,arduino_mega,usb_b,usb_adaptor,mosfet*ceil((10+31+15+19+6+13)/32*10/10),LED_strip*ceil((10+31+15+19+6+13)/32*10),cord_cover*ceil(30*32/3.3*1/40)];
+            lighting_electrical.materials = [wires,solder,arduino_mega,usb_b,usb_adaptor,mosfet*ceil((10+31+15+19+6+13)/32*10/10),LED_strip*ceil((10+31+15+19+6+13)/16*10),cord_cover*ceil(30*32/3.3*1/40)];
         lighting_code = task("Code",{lighting_electrical,1},6);
         lighting_paint = task("Paint",{lighting_electrical,1},3);
         lighting.add_subtask([lighting_frame,lighting_electrical,lighting_code,lighting_paint]);
     speakers = task("Speakers",{building,0},3);
+        speakers.assigned_to = 'McKay';
         ceiling.starts_when(speakers,1)
     	speakers.materials = [speaker*3,speaker_wire*2,speaker_box,computer2speaker_box];
         ceiling.starts_when(speakers,1);
     microphone = task("Microphone",{building,0},2);
+        microphone.assigned_to = 'McKay';
         ceiling.starts_when(microphone,1)
     	microphone.materials = [microphone_system*2,mic_splitter,headphone_adaptor,mixer];
     cameras = task("Cameras",{building,0},3);
+        cameras.assigned_to = 'McKay';
         ceiling.starts_when(cameras,1)
     	cameras.materials = [camera,hdmi_cable,tv_40];
     gm_computer = task("Game Master's Computer",{building,0});
+        gm_computer.assigned_to = 'Josh';
         gm_computer.materials = iMac;
         gm_comp_code = task("Code",{lighting,1},30);
             gm_comp_code.starts_when(hologram,1);
         gm_comp_Install = task("Install",{gm_computer,0},1);
+            gm_comp_Install.assigned_to = 'McKay';
         gm_computer.add_subtask([gm_comp_code,gm_comp_Install]);
     decorate_power_supply = task("Decorate Power Supply",{powersupply,1},5);
+        decorate_power_supply.assigned_to = 'McKay';
         decorate_power_supply.note = "Paint Ship's Name";
         decorate_power_supply.materials = [blue_paint,black_paint,white_paint,silver_paint];
         decorate_power_supply.starts_when(lighting,1);
@@ -391,11 +430,13 @@ building = task("Building/Instilation",{project,0});
         decorate_power_supply.starts_when(switch_board,1);
         decorate_power_supply.starts_when(fans,1);
     create_manual = task("Ship's Manual",{building,0});
+        create_manual.assigned_to = 'McKay';
         manual_write = task("Write",{create_manual,0},10);
         manual_print = task("print",{manual_write,1},1);
         manual_print.materials = [print*100,bind];
         create_manual.add_subtask([manual_write,manual_print]);
     NASA_printer = task("NASA Printer",{top,1});
+        NASA_printer.assigned_to = 'Kameron';
     	NASA_printer.materials = [printer,printer_paper];
         NASA_frame = task("Frame",{NASA_printer,0},3);
             NASA_frame.materials = two_by_four;
@@ -404,6 +445,7 @@ building = task("Building/Instilation",{project,0});
         NASA_code = task("Code",{NASA_electrical,1},20);
         NASA_printer.add_subtask([NASA_frame,NASA_electrical,NASA_code]);
     main_power_controller = task("Main Power Controller",{lighting,1});
+        main_power_controller.assigned_to = 'Kameron';
         main_power_controller.starts_when(lighting,1);
         main_power_controller.starts_when(crackel,1);
         main_power_controller.starts_when(starchart,1);
@@ -415,6 +457,7 @@ building = task("Building/Instilation",{project,0});
         power_code = task("Code",{main_power_controller,0},10);
         main_power_controller.add_subtask([power_electrical,power_code]);
     conclusion = task("Conclusion",{building,0});
+        conclusion.assigned_to = 'Josh';
         conclusion.materials = [switch_2p,siwtch_3p,switch_with_light*2,button,dial,arduino_mega,usb_b,usb_adaptor,wires*4];
         navigator_station = task("Left Station",{desk_electrical,1},3);
         comms_station = task("Right Station",{desk_electrical,1},3);
@@ -438,6 +481,7 @@ testing.starts_when(construction,1);
     
 logistical = task("Logistical Tasks",{project,0});
     touch_up_paint = task("Touch Up Paint",{building,1},3);
+    touch_up_paint.assigned_to = 'Jerimiah';
     order = task("Order Parts",{logistical,0},3*week);
 %         building.starts_when(order,1);
         order.note = "Don't forget: blackboard markers and roller for switch board";
@@ -445,7 +489,9 @@ logistical = task("Logistical Tasks",{project,0});
 %         advertise.set_time('start',project_start);
 %         advertise.set_time('stop',project_end);
     flowchart = task("Flow Chart",{test_group,1},2);
-    train = task("Train Employees",{employees,1},2*week);    
+    flowchart.assigned_to = 'Kameron';
+    train = task("Train Employees",{employees,1},2*week);  
+    train.assigned_to = 'Josh';
     clean = task("Clean",{building,1},4);
         clean.starts_when(construction,1);
         testing.starts_when(clean,1);
@@ -453,15 +499,18 @@ logistical = task("Logistical Tasks",{project,0});
 
 project.add_subtask([construction,building,testing,logistical])
 
-% project.update(project_start,project_end,avaliablity);
+project.update(project_start,project_end,avaliablity);
 
 %% Output
-% project.gantt(2);
-% construction.gantt;
-% building.gantt(1);
-project.budget;
-project.bill_of_materials;
-project.task_list;
+project.gantt(2);
+construction.gantt;
+building.gantt(1);
+% project.budget;
+% project.bill_of_materials;
+project.task_list('Kameron');
+project.task_list('Josh');
+project.task_list('Jerimiah');
+project.task_list('McKay');
 
 
 

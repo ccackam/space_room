@@ -7,7 +7,7 @@ classdef item < handle
     
     methods
         function self = item(name,cost,where)
-            self.name = name;
+            self.name = strrep(name,',',' ');
             if exist('cost','var') && ~isempty(cost)
                 self.cost = cost;
             end

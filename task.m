@@ -13,6 +13,7 @@ classdef task < handle
         stop = datetime(0,0,0,0,0,0)
         name
         note
+        assigned_to
     end
     
     properties (Constant)
@@ -44,6 +45,10 @@ classdef task < handle
                 end
                 if self.stop < tasks(i).stop
                     self.set_time('stop',tasks(i).stop)
+                end
+                
+                if ~isempty(self.assigned_to) && isempty(tasks(i).assigned_to)
+                    tasks(i).assigned_to = self.assigned_to;
                 end
 
                 disp("Subtask added to " + self.name + ": " + tasks(i).name)
@@ -303,25 +308,45 @@ classdef task < handle
                 star(1:53) = '*';
                 star(54:55) = '\n';
                 fprintf(star)
+                fprintf('count,name,individual cost,total cost,website\n')
                 for i = 1:length(material_list)
-                    fprintf('%s, $ %.2f\n',string(material_count(i))+'  x  '+material_list(i).name,material_list(i).cost*material_count(i))
+                    fprintf('%s, $ %.2f, $ %.2f, %s\n',string(material_count(i))+','+material_list(i).name,material_list(i).cost,material_list(i).cost*material_count(i),material_list(i).where)
                 end
-                fprintf('%-s, $ %.2f\n','TOTAL',total_cost)
+                fprintf('%-s, $ %.2f\n','-,TOTAL,-',total_cost)
                 fprintf(star)
             end
         end
         
-        function task_list(self)
+        function task_list(self,list_name)
             task_list = self.get_tasks;
             start_date = [task_list.start];
             [~,I] = sort(start_date);
             task_list = task_list(I);
+            task_count = 0;
             bar(1:73) = '-';
             bar(74:75) = '\n';
+            if exist('list_name','var') && ~isempty(list_name)
+                fprintf('\n\n\n')
+                fprintf(list_name)
+                fprintf("'s ")
+                fprintf('Task List\n')
+            end
             fprintf(bar)
             for i = 1:length(task_list)
-                fprintf('%-s, %s, %s\n',task_list(i).supertask.name() + ": " + task_list(i).name,datestr(task_list(i).start,'dd-mmm HH:MM'),datestr(task_list(i).stop,'dd-mmm HH:MM'))
+%                 if(strcmp(task_list(i).name,'Speakers'))
+%                     disp(i)
+%                 end
+                if exist('list_name','var') && ~isempty(list_name)
+                    if ~isempty(task_list(i).assigned_to) && contains(task_list(i).assigned_to,list_name,'IgnoreCase',true)
+                        fprintf('%-s, %s, %s\n',task_list(i).supertask.name() + ": " + task_list(i).name,datestr(task_list(i).start,'dd-mmm HH:MM'),datestr(task_list(i).stop,'dd-mmm HH:MM'))
+                        task_count = task_count + 1;
+                    end
+                else
+                    fprintf('%-s, %s, %s\n',task_list(i).supertask.name() + ": " + task_list(i).name,datestr(task_list(i).start,'dd-mmm HH:MM'),datestr(task_list(i).stop,'dd-mmm HH:MM'))
+                    task_count = task_count + 1;
+                end
             end
+            fprintf('Task Count,%i\n',task_count)
             fprintf(bar)
         end
     end
